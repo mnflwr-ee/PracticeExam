@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
-    //rputes
+    //routes
     Route::get('employee', [\App\Http\Controllers\EmployeeController::class, 'index'])->name('employee.index');
     
     Route::get('employee/create', [\App\Http\Controllers\EmployeeController::class, 'create'])->name('employee.create');
@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::put('employee/{id}/edit', [\App\Http\Controllers\EmployeeController::class, 'update'])->name('employee.update');
 
     route::get('employee/{id}/delete', [\App\Http\Controllers\EmployeeController::class, 'destroy'])->name('employee.delete');
+
+    //Route::resource('employee', \App\Http\Controllers\EmployeeController::class);
 });
 
 
