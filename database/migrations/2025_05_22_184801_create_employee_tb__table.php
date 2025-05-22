@@ -11,8 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('migration_tb_', function (Blueprint $table) {
-            //best practice is to have the same name for the name attribute and col in database
+        Schema::create('employee_tb_', function (Blueprint $table) {
             $table->id();
             $table->string('fname');
             $table->string('lname');
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('migration_tb_');
+        Schema::dropIfExists('employee_tb_');
     }
 };

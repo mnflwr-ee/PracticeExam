@@ -23,6 +23,13 @@ Route::middleware('auth')->group(function () {
     
     Route::get('employee/create', [\App\Http\Controllers\EmployeeController::class, 'create'])->name('employee.create');
 
+    Route::post('employee/create', [\App\Http\Controllers\EmployeeController::class, 'store'])->name('employee.store');
+    //edit
+    Route::get('employee/{id}/edit', [\App\Http\Controllers\EmployeeController::class, 'edit'])->name('employee.edit');
+
+    Route::put('employee/{id}/edit', [\App\Http\Controllers\EmployeeController::class, 'update'])->name('employee.update');
+
+    route::get('employee/{id}/delete', [\App\Http\Controllers\EmployeeController::class, 'destroy'])->name('employee.delete');
 });
 
 

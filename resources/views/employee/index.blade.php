@@ -36,15 +36,21 @@
                         </thead>
 
                         <tbody>
+                            @foreach ($employees as $items)
                             <tr>
-                                <td>1</td>
-                                <td>Deseree</td>
-                                <td>Balboa</td>
-                                <td>Magkasi</td>
-                                <td>21</td>
-                                <td>123</td>
-                                <td>2016</td>
+                                <td class="">{{$items->id}}</td>
+                                <td>{{$items->fname}}</td>
+                                <td>{{$items->lname}}</td>
+                                <td>{{$items->midname}}</td>
+                                <td>{{$items->age}}</td>
+                                <td>{{$items->address}}</td>
+                                <td>{{$items->zip}}</td>
+                                <td>
+                                    <span class="badge bg-succes"> <a href="{{ route('employee.edit', $items->id) }}" class="btn btn-success"> Edit </a> </span>      
+                                    <span class="badge bg-danger"> <a href="{{ route('employee.delete', $items->id) }}" class="btn btn-danger"> Delete </a> </span>
+                                </td>
                             </tr>
+                            @endforeach
                         </tbody>
 
                     </table>

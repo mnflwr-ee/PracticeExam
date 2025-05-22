@@ -21,56 +21,57 @@
                     <div class="card card-secondary">
                         <div class="card-header">
                             <h3 class="card-tile">
-                                Add New Employee
+                                Edit
                             </h3>
                         </div>
 
-                        <form action="{{ route('employee.store') }}" method="POST">
-
+                        <form action="{{ route('employee.edit', $employee->id) }}" method="POST">
                             @csrf 
+                            @method ('PUT')
 
                             <div class="row card-body col-12">
 
                                 <div class="form-group col-12">
                                     <label for="">First Name</label>
-                                    <input type="text" class="form-control g-2" name="fname" placeholder="Enter First Name">
+                                    <input type="text" class="form-control g-2" name="fname" placeholder="Enter First Name" value="{{ $employee->fname}}">
                                 </div>
                                 @error('fname') <span class="text-danger">{{$message}}</span> @enderror
                            
                                 <div class="form-group col-12">
                                     <label for="">Last Name</label>
-                                    <input type="text" class="form-control g-2" name="lname" placeholder="Enter Last Name">
+                                    <input type="text" class="form-control g-2" name="lname" placeholder="Enter Last Name" value="{{ $employee->lname}}">
                                 </div>
                                 @error('lname') <span class="text-danger">{{$message}}</span> @enderror
 
                                 <div class="form-group col-12">
                                     <label for="">Middle Name</label>
-                                    <input type="text" class="form-control g-2" name="midname" placeholder="Enter Middle Name">
+                                    <input type="text" class="form-control g-2" name="midname" placeholder="Enter Middle Name" value="{{ $employee->midname}}">
                                 </div>
                                 @error('midname') <span class="text-danger">{{$message}}</span> @enderror
 
                                 <div class="form-group col-12">
                                     <label for="">Address</label>
-                                    <input type="text" class="form-control g-2" name="address" placeholder="Enter Address">
+                                    <input type="text" class="form-control g-2" name="address" placeholder="Enter Address" value="{{ $employee->address}}">
                                 </div>
                                 @error('address') <span class="text-danger">{{$message}}</span> @enderror
 
                                 <div class="form-group col-6">
                                     <label for="">Zip</label>
-                                    <input type="number" class="form-control" name="zip" placeholder="Enter ZIP">
+                                    <input type="number" class="form-control" name="zip" placeholder="Enter ZIP" value="{{ $employee->zip}}">
                                 </div>
                                 @error('zip') <span class="text-danger">{{$message}}</span> @enderror
 
                                 <div class="form-group col-6">
                                     <label for="">Age</label>
-                                    <input type="number" class="form-control" name="age" placeholder="Enter age">
+                                    <input type="number" class="form-control" name="age" placeholder="Enter age" value="{{ $employee->age}}">
                                 </div>
                                 @error('age') <span class="text-danger">{{$message}}</span> @enderror
                             
                             </div>
 
                             <div class="card-footer ">
-                                 <button type="submit" class="btn btn-success col-12">Submit</a>
+                                 <button type="submit" class="btn btn-success col-12">Update</button>
+
                             </div>
 
                         </form>
